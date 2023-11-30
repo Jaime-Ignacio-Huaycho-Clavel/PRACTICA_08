@@ -21,8 +21,8 @@ using namespace std;
 
 struct structpersonas{
     char nombre[30];
-    int edad;
-    char sexo;
+    char edad[2];
+    char sexo[1];
     char fecha_nacimiento[10];
 };
 
@@ -35,15 +35,15 @@ void copiardatos(structpersonas persona){
 
 structpersonas ingresardatos(){
     structpersonas persona;
+    cin.ignore();
     cout<<"Nombre: ";
     cin.getline(persona.nombre,30);
     cout<<"Edad: ";
-    cin>>persona.edad;
+    cin.getline(persona.edad,2);
     cout<<"Sexo: ";
-    cin>>persona.sexo;
-    cout<<"Fecha de nacimiento: "
-    ;cin.getline(persona.fecha_nacimiento,10);
-    cin.ignore();
+    cin.getline(persona.sexo,1);
+    cout<<"Fecha de nacimiento: ";
+    cin.getline(persona.fecha_nacimiento,10);
     return persona;
 }
 
